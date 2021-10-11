@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 public class OrderService {
 
     private OrderRepository orderRepository;
-    private RestTemplate restTemplate;
+    //private RestTemplate restTemplate;
     private PaymentProxy proxy;
 
     public OrderService(OrderRepository orderRepository,PaymentProxy proxy) {
@@ -31,7 +31,7 @@ public class OrderService {
 //        ResponseEntity<Payment> response = restTemplate.postForEntity("http://localhost:9100/payment/makePayment",payment,Payment.class);
 //        Payment paymentResponse = response.getBody();
 
-        Payment paymentResponse =proxy.makePayment(payment);
+        Payment paymentResponse = proxy.makePayment(payment);
 
         orderRepository.save(order);
 

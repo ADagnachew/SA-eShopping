@@ -10,4 +10,5 @@ public interface PaymentProxy {
 
     @PostMapping("payment/makePayment")
     Payment makePayment(@RequestBody Payment payment);
+
 }

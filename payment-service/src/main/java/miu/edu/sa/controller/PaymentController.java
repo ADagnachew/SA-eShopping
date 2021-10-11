@@ -1,16 +1,13 @@
 package miu.edu.sa.controller;
 
 
-import miu.edu.sa.dto.PaymentRequest;
 import miu.edu.sa.model.Payment;
 import miu.edu.sa.service.PaymentService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/payment")
 public class PaymentController {
 
     private PaymentService paymentService;
@@ -19,7 +16,7 @@ public class PaymentController {
         this.paymentService = paymentService;
     }
 
-    @PostMapping("/makePayment")
+    @PostMapping("/payment/makePayment")
     public Payment makePayment(@RequestBody Payment payment){
         return paymentService.makePayment(payment);
     }
